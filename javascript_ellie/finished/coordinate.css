@@ -1,0 +1,24 @@
+div {
+  display : block;
+  width : 250px;
+  height : 250px;
+  margin-bottom: 10px;
+}
+
+.btnBox {
+  display: inline-block;
+  position : fixed;
+  right: 0px;
+}
+
+button {
+  margin-right: 10px;
+    
+}
+.beige {
+  background-color: beige;
+}
+
+.orange {
+  background-color: orange;
+}

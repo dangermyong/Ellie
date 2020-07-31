@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse coordinates</title>
+  <script src="https://kit.fontawesome.com/fc26219ee3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      cursor: none;
+    }
+    .coordinate {
+      position: absolute;
+    }
+
+    .far {
+      left: -10px;
+      top: -10px;
+      font-size: 16px;
+    }
+
+    .vertical {
+      position: absolute;
+      border-left: solid 1px black;
+      height: 100%;
+      left: 20px;
+      margin: 0;
+    }
+    
+    .horizontal {
+      position: absolute;
+      border-top: solid 1px black;
+      width: 100%;
+      top: 20px;
+      margin: 0;
+    }
+  </style>
+  <div class="coordinate"></div>
+  <i class="coordinate far fa-circle"></i>
+
+  <div class="vertical"></div>
+  <div class="horizontal"></div>
+
+  <script>
+    const coordinate = document.getElementsByClassName('coordinate');
+    
+    function mousePosition () {
+      let x = event.clientX;
+      let y = event.clientY;
+      coordinate[0].innerHTML= `${x}px, ${y}px`;
+      coordinate[0].style.left = (x+5)+"px";
+      coordinate[0].style.top = (y+5)+"px";
+      coordinate[1].style.left = (x-8)+"px";
+      coordinate[1].style.top = (y-8)+"px";
+      document.getElementsByClassName('vertical')[0].style.left = x+"px";
+      document.getElementsByClassName('horizontal')[0].style.top = y+"px";
+      console.log(coordinate[0]);
+    }
+    
+    document.addEventListener('mousemove', () => {
+      mousePosition ();
+    });
+    
+  </script>
+</body>
+</html>
+
+
